@@ -26,17 +26,17 @@ namespace PaginaDeCadastro.Models
 
         [Required(ErrorMessage = "{0} é necessária")]
         [StringLength(60, MinimumLength = 3, ErrorMessage = "Tamanho da {0} deve estar entre {2} e {1} caracteres")]
-        public string Naturalidade { get; set; }
+        public string Nacionalidade { get; set; }
 
         [Required(ErrorMessage = "{0} é necessária")]
         [StringLength(60, MinimumLength = 3, ErrorMessage = "Tamanho da {0} deve estar entre {2} e {1} caracteres")]
-        [Display(Name = "Nacionalidade(Cidade)")]
-        public string CidadeNac { get; set; }
+        [Display(Name = "Naturalidade")]
+        public string CidadeNat { get; set; }
 
         [Required(ErrorMessage = "{0} é necessário")]
         [StringLength(3, MinimumLength = 1, ErrorMessage = "Tamanho da {0} deve estar entre {2} e {1} caracteres")]
-        [Display(Name = "Nacionalidade(Estado)")]
-        public string EstadoNac { get; set; }
+        [Display(Name = "Estado")]
+        public string EstadoNat { get; set; }
 
         [Required(ErrorMessage = "{0} é necessário")]
         [StringLength(60, MinimumLength = 3, ErrorMessage = "Tamanho do {0} deve estar entre {2} e {1} caracteres")]

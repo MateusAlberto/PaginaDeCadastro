@@ -53,7 +53,7 @@ namespace PaginaDeCadastro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,DataNascimento,Naturalidade,CidadeNac,EstadoNac,NomePai,NomeMae,Idade")] Pessoa pessoa)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,DataNascimento,Nacionalidade,CidadeNat,EstadoNat,NomePai,NomeMae,Idade")] Pessoa pessoa)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace PaginaDeCadastro.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Sobrenome,DataNascimento,Naturalidade,CidadeNac,EstadoNac,NomePai,NomeMae,Idade")] Pessoa pessoa)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Sobrenome,DataNascimento,Nacionalidade,CidadeNat,EstadoNat,NomePai,NomeMae,Idade")] Pessoa pessoa)
         {
             if (id != pessoa.Id)
             {
