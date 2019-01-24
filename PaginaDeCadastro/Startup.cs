@@ -61,7 +61,7 @@ namespace PaginaDeCadastro
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Pessoas}/{action=Create}/{id?}");
             });
         }
     }

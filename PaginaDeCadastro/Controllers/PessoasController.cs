@@ -57,6 +57,7 @@ namespace PaginaDeCadastro.Controllers
         {
             if (ModelState.IsValid)
             {
+                pessoa.Idade = GerarIdade(pessoa);
                 _context.Add(pessoa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -96,6 +97,7 @@ namespace PaginaDeCadastro.Controllers
             {
                 try
                 {
+                    pessoa.Idade = GerarIdade(pessoa);
                     _context.Update(pessoa);
                     await _context.SaveChangesAsync();
                 }
@@ -112,6 +114,7 @@ namespace PaginaDeCadastro.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            pessoa.Idade = GerarIdade(pessoa);
             return View(pessoa);
         }
 
@@ -147,6 +150,20 @@ namespace PaginaDeCadastro.Controllers
         private bool PessoaExists(int id)
         {
             return _context.Pessoa.Any(e => e.Id == id);
+        }
+
+        private int GerarIdade(Pessoa pessoa)
+        {
+            int idade = 0;
+            if (pessoa != null)
+            {
+                idade = DateTime.Today.Year - pessoa.DataNascimento.Year;
+                if (pessoa.DataNascimento.Month > DateTime.Today.Month || pessoa.DataNascimento.Month == DateTime.Today.Month && pessoa.DataNascimento.Day > DateTime.Today.Day)
+                {
+                    idade--;
+                }
+            }
+            return idade;
         }
     }
 }
