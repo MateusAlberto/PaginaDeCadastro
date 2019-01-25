@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using PaginaDeCadastro.Models;
+using PaginaDeCadastro.Services;
 
 namespace PaginaDeCadastro
 {
@@ -38,6 +39,8 @@ namespace PaginaDeCadastro
 
             services.AddDbContext<PaginaDeCadastroContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PaginaDeCadastroContext")));
+
+            services.AddScoped<PessoaServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

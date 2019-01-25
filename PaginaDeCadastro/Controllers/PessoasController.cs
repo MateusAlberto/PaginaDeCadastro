@@ -6,15 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PaginaDeCadastro.Models;
+using PaginaDeCadastro.Services;
 
 namespace PaginaDeCadastro.Controllers
 {
     public class PessoasController : Controller
     {
+        private readonly PessoaServices _pessoaServices;
         private readonly PaginaDeCadastroContext _context;
 
-        public PessoasController(PaginaDeCadastroContext context)
+        public PessoasController(PaginaDeCadastroContext context, PessoaServices pessoaServices)
         {
+            _pessoaServices = pessoaServices;
             _context = context;
         }
 
